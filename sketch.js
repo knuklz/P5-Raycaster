@@ -14,12 +14,12 @@ function draw() {
   ray.show();
 
   let pt = ray.cast(wall);
-  console.log(pt);  
+  // console.log(pt);  
   
-  // if(pt) {
-  //   stroke(255);
-  //   ellipse(pt.x, pt.y, 8, 8);
-  // }
+  if(pt) {
+    stroke(255);
+    ellipse(pt.x, pt.y, 8, 8);
+  }
 
 
 
