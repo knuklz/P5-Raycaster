@@ -11,19 +11,21 @@ function setup() {
 }
 
 function draw() {
-  player.pos.x = mouseX;
-  player.pos.y = mouseY;
+  player.pos.x = mouseX -20;
+  player.pos.y = mouseY -20;
+  
+  player.update();
 
   background(1);
   wall.show();
   player.show();
- 
-/*   ray.show();
-  let pt = ray.cast(wall);
+  
+  
+  let pt = player.ray.cast(wall);
   if(pt) {
     stroke(255);
     ellipse(pt.x, pt.y, 8, 8);
-  } */
+  }
 
 
 

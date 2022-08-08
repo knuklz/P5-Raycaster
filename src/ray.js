@@ -1,7 +1,11 @@
+
 class Ray {
     constructor(pos, dir){
         this.pos = pos;
-        this.dir = dir;
+        this.dir = p5.Vector.fromAngle(dir);
+    }
+    setAngle(ang){
+        this.dir = p5.Vector.fromAngle(ang);
     }
     show(){
         stroke(255);
@@ -13,7 +17,7 @@ class Ray {
         // translate(this.pos.x,this.pos.y); 
         
         // Draw a line from pos to target
-        line(0, 0, 10, 10);
+        line(0, 0, this.dir.x * 20, this.dir.y * 20);
         
         // Return origin point to location saved prior
         pop();
@@ -36,7 +40,7 @@ class Ray {
         if(den == 0) {
             return;
         } else {
-            console.log("True");
+            // console.log("True");
         }
         
         const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
