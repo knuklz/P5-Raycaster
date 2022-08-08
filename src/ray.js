@@ -1,7 +1,7 @@
 class Ray {
-    constructor(x1, y1){
-        this.pos = createVector(x1, y1);
-        this.dir = createVector(1, 0);
+    constructor(pos, dir){
+        this.pos = pos;
+        this.dir = dir;
     }
     show(){
         stroke(255);
@@ -10,10 +10,10 @@ class Ray {
         push();
         
         // Move origin point to current position                       
-        translate(this.pos.x,this.pos.y); 
+        // translate(this.pos.x,this.pos.y); 
         
         // Draw a line from pos to target
-        line(0, 0, this.dir.x * 10, this.dir.y * 10);
+        line(0, 0, 10, 10);
         
         // Return origin point to location saved prior
         pop();
@@ -35,6 +35,8 @@ class Ray {
         // console.log(den);
         if(den == 0) {
             return;
+        } else {
+            console.log("True");
         }
         
         const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / den;
